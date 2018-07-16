@@ -72,7 +72,8 @@ takePicture()
        alert("Error..."+err);
       });
          }
-         loginPage(){
+         loginPage()
+         {
            this.navCtrl.push(LoginPage);
          }
 
