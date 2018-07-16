@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<button ion-button full color="dark" (click)="takePicture()">Take Photo</button>
+<button ion-button full color="secondary" (click)="getImage()">Get Photo from Gallery</button>
+<button ion-button full color="danger" (click)="cropImage()">Crop Image</button>
+<p align="center"><img src="{{ imageUrl }}"></p>
+   <button ion-button color="secondary" round (click)="loginPage()">Click for login</button>
+</ion-content>
