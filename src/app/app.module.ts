@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { SQLite } from '@ionic-native/sqlite';
+// import { Toast } from '@ionic-native/toast';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SignupPage } from '../pages/signup/signup';
     StatusBar,
     SplashScreen,
     Camera,
+    SQLite,
+
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
