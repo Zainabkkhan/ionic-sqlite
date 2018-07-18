@@ -16,26 +16,51 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 export class SignupPage
 {
   name: any;
+  dob:any;
+  passw:any;
+  conpass:any;
+  email:any;
+  mobnumber:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite) {
 
   }
 
+  signupData(username, dob, password, conpass, email, mobnum) {
+    this.name = username;
+    this.dob = dob;
+    this.passw = password;
+    this.conpass = conpass;
+    this.email = email;
+    this.mobnumber = mobnum;
+    alert("mess" + this.name + this.dob + this.passw + this.conpass + this.email + this.mobnumber);
+      this.sqlite.create({
+           name: 'ionicdb.db'
+          ,location: 'default'
+        })
+        .then((db: SQLiteObject) =>
+      {
 
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad SignupPage');
-  // }
+        //create table section
+        db.executeSql('CREATE TABLE IF NOT EXISTS userINFO(id INTEGER PRIMARY KEY AUTOINCREMENT,username,phonenum,email,dob,password,conpass)',[])
+          .then(() => alert('Executed SQL'))
+          .catch(e => console.log(e));
 
-  signupData(username, dob, password, conpass, email, mobnum)
-  {
-    this.sqlite.create({name: 'ionicdb.db',location: 'default'})
-      .then((db: SQLiteObject) =>
-    {
-      db.executeSql('create table userDetails(rowid INTEGER PRIMARY KEY, username TEXT, dob TEXT, password TEXT, conpass TEXT, Email TEXT, mobnum INT)')
-        .then(res => console.log('Executed SQL'))
+       //insert into table
+        db.executeSql('INSERT INTO userINFO(username,phonenum,email,dob,password,compass) VALUES(?,?,?,?,?,?)',
+          [this.name,this.mobnumber,this.email,this.dob,this.passw,this.conpass])
 
-    })
+        db.executeSql('select * from userINFO', []).then((ionicdb) => {
+
+          alert(JSON.stringify(ionicdb));
+        })
+
+      })
+        .catch(e => alert(JSON.stringify(e)));
+
+
 
   }
+
 }
 
