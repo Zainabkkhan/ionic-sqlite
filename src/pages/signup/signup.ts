@@ -52,11 +52,11 @@ export class SignupPage
 
         db.executeSql('select * from userINFO', []).then((ionicdb) => {
 
-          alert(JSON.stringify(ionicdb));
+          alert("retrieve data..."+JSON.stringify(ionicdb));
         })
 
       })
-        .catch(e => alert(JSON.stringify(e)));
+        .catch(e => alert("error..."+JSON.stringify(e)));
 
 
 

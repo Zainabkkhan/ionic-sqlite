@@ -15,13 +15,22 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  user:any;
+  pass:any
 
-  constructor(public navCtrl: NavController, public navParams: NavParams)
-  {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private sqlite: SQLite) {
   }
+
   signupPage()
   {
     this.navCtrl.push(SignupPage);
+  }
+  signinpage(user,pass)
+  {
+    this.user=user;
+    this.pass=pass;
+    alert("login..."+user+pass);
+
   }
 
 }
