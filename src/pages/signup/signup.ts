@@ -50,10 +50,12 @@ export class SignupPage
         db.executeSql('INSERT INTO userINFO(username,phonenum,email,dob,password,compass) VALUES(?,?,?,?,?,?)',
           [this.name,this.mobnumber,this.email,this.dob,this.passw,this.conpass])
 
-        db.executeSql('select * from userINFO', []).then((ionicdb) => {
+         //retrieve data
 
-          alert("retrieve data..."+JSON.stringify(ionicdb));
-        })
+        // db.executeSql('select * from userINFO', []).then((ionicdb) => {
+        //
+        //   alert("retrieve data..."+JSON.stringify(ionicdb));
+        // })
 
       })
         .catch(e => alert("error..."+JSON.stringify(e)));
