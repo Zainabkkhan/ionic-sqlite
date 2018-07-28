@@ -51,4 +51,11 @@ export class LoginPage {
   ionViewWillUnload(){
     alert("ionViewwillUnload");
   }
+  thereIS(){
+
+  }
+  newOne(){
+
+  }
+
 }
