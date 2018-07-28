@@ -58,4 +58,10 @@ export class LoginPage {
 
   }
 
+  ionViewCanEnter(){
+    alert("ionViewCanEnter")
+  }
+  ionViewCanLeave(){
+    alert("ionViewCanLeave");
+  }
 }
