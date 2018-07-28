@@ -29,7 +29,8 @@ export class LoginPage {
   {
     this.user=user;
     this.pass=pass;
-    alert("This is login alert..."+user+pass);
+    alert("The login username:..."+user);
+    alert("The login password:..."+pass);
 
   }
 
