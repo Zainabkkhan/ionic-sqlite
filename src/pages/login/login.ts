@@ -33,5 +33,22 @@ export class LoginPage {
     alert("The login password:..."+pass);
 
   }
-
+  ionViewDidLoad(){
+    alert("ionViewLoad");
+  }
+  ionViewWillEnter(){
+    alert("ionViewWillEnter");
+  }
+  ionViewDidEnter(){
+    alert("ionViewDidEnter");
+  }
+  ionViewWillLeave(){
+    alert("ionViewWillEnter");
+  }
+  ionViewDidLeave(){
+    alert("ionViewDidLeave");
+  }
+  ionViewWillUnload(){
+    alert("ionViewwillUnload");
+  }
 }
